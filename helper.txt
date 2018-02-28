@@ -1,0 +1,57 @@
+Config Files (etc/):
+	hosts
+		-> to define IP /name
+	networks
+		-> to set name to network
+	host.conf
+		-> set who resolve DNS
+	resolv.conf
+		-> set DNS
+	network/intefaces
+		-> config all interfaces system
+
+System tools:
+	df 	
+		-> show left space on disc
+	top
+		-> show linux process actually running ?
+	ps
+		-> show process actually running?
+	kill
+		-> kill a process
+
+Network tools:
+	ifconfig
+		-> show/set network interfaces
+	ping
+		-> send ping to an other server, show pong (response)
+	netstat
+		-> show connection on our server
+	traceroute
+		-> show from A to B the itinerary (ping expended)
+	networksetup -listallhardwareports
+		-> list all hardware port
+	nslookup
+		-> query on DNS
+	whois
+		-> query on DNS/IP and show all data
+	dig
+		-> get info from DNS
+
+LEXIQUE:
+    • IP (Internet Protocol):
+		-> "inet" from interfaces
+    	-> X1.X2.X3.X4 where 0 ≤ Xn ≤ 255
+    • MAC (Media Access Control):
+		-> "ether" from interfaces
+		-> X1:Y2:Y3:Y4:Y5:Y6 where 0 ≤ Yn ≤ FF
+	• DNS (Domain Name System):
+		-> translate domain name to IP address
+	• Routing tables:
+		-> structure with : address, static routes, dynamic routes, default route
+	• Gateway:
+		-> link between two networks
+	• nat (Network Address Translation):
+		-> output
+	• DHCP (Dynamic Host Configuration Protocol):
+		-> deliver IPs
