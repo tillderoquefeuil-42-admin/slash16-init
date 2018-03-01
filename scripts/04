@@ -1,0 +1,9 @@
+#!/bin/bash
+
+tmp="/tmp/diff_contab"
+if ! diff 01 02 > /dev/null 2> /dev/null
+then
+    echo "OK"
+    diff 01 02 > $tmp
+    cat $tmp | mail -s "AdminSecurity | Crontab updated" tilltdr@gmail.com
+fi
