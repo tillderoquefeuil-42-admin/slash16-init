@@ -19,6 +19,11 @@ System tools:
 		-> show process actually running?
 	kill
 		-> kill a process
+	iptables
+		-> manage Firewall rules
+		-> usage : iptables -[options] chain (new rule) STAT
+		-> options : L(ist) | A(dd) | D(delete) | P(olicy)
+		-> STAT : ACCEPT | REJECT | DROP
 
 Network tools:
 	ifconfig
