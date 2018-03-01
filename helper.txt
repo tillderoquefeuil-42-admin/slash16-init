@@ -55,3 +55,5 @@ LEXIQUE:
 		-> output
 	• DHCP (Dynamic Host Configuration Protocol):
 		-> deliver IPs
+	• (network) firewall:
+		-> all rules to allow or deny passage of network traffic
