@@ -1,9 +1,21 @@
 #!/bin/bash
 
-tmp="/tmp/diff_contab"
-if ! diff 01 02 > /dev/null 2> /dev/null
+cron="/etc/crontab"
+backup="/var/backups/crontab.md5"
+diff="/root/scripts/cron_diff"
+
+echo "
+#!/bin/bash
+
+if ! md5sum -c $backup > /dev/null 2> /dev/null ;
 then
-    echo "OK"
-    diff 01 02 > $tmp
-    cat $tmp | mail -s "AdminSecurity | Crontab updated" tilltdr@gmail.com
+    echo 'The filde $cron has been updated' | mail -s 'AdminSecurity | Crontab updated' root
+    md5sum $cron > $backup
 fi
+" > $diff
+
+md5sum $cron > $backup
+
+/bin/sh $diff
+
+(crontab -l 2> /dev/null; echo "0 0 * * * /bin/sh $diff") | crontab -

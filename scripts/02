@@ -1,5 +1,15 @@
 #!/bin/bash
 
+update="/root/scripts/update_package"
+
+echo "
+#!/bin/bash
+
 apt-get update -y >> /var/log/update_script.log 2> /dev/null
 apt-get upgrade -y >> /var/log/update_script.log 2> /dev/null
 apt-get autoremove -y >> /var/log/update_script.log 2> /dev/null
+"
+
+/bin/sh $update
+
+(crontab -l 2> /dev/null; echo "0 0 * * * /bin/sh $update") | crontab -
